@@ -36,6 +36,7 @@ func main() {
 	if err := json.NewDecoder(resp.Body).Decode(&movie); err != nil {
 		fmt.Fprintf(os.Stderr, "Err: %s\n", err)
 	}
+	resp.Body.Close()
 
 	if movie != (Movie{}) {
 		fmt.Printf("%s\t%s\t%s\n%s\n%s\n%s\n%s rate\n",
