@@ -1,2 +1,2 @@
 # go
-Golang Exercises
+Golang Projects
