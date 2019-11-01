@@ -1,10 +1,11 @@
 package main
 
-import "fmt"
-
 func main() {
-	a1 := [...]int{0, 1, 2}
-	a2 := a1[:]
+	println(sum(4, 9))
+}
 
-	fmt.Println(a2)
+func sum(a, b int) (res int) {
+	defer func() { res += 100 }()
+
+	return a + b
 }
