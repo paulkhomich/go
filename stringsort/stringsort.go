@@ -1,7 +1,7 @@
 package main
 
-type stringSorted []rune
+type runeSorted []rune
 
-func (s stringSorted) Len() int { return len(s) }
-func (s stringSorted) Less(i, j int) bool { return s[i] < s[j] }
-func (s stringSorted) Swap(i, j int) { s[i], s[j] = s[j], s[i] }
+func (s runeSorted) Len() int { return len(s) }
+func (s runeSorted) Less(i, j int) bool { return s[i] < s[j] }
+func (s runeSorted) Swap(i, j int) { s[i], s[j] = s[j], s[i] }

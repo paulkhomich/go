@@ -4,6 +4,6 @@ import "sort"
 
 func main() {
 	r := []rune("helloworld")
-	sort.Sort(stringSorted(r))
+	sort.Sort(runeSorted(r))
 	println(string(r))
 }
