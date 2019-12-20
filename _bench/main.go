@@ -1,11 +1,15 @@
 package main
 
+import (
+	"fmt"
+	"time"
+)
+
 func main() {
-	println(sum(4, 9))
-}
-
-func sum(a, b int) (res int) {
-	defer func() { res += 100 }()
-
-	return a + b
+	for {
+		for _, r := range "/\\" {
+			fmt.Printf("\r%c", r)
+			time.Sleep(100 * time.Millisecond)
+		}
+	}
 }
