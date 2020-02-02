@@ -107,6 +107,7 @@ func greeting(conn net.Conn) string {
 	for len(username) == 0 {
 		io.WriteString(conn, "Enter your username: ")
 		scanner.Scan()
+		println("got")
 		username = scanner.Text()
 	}
 
@@ -116,11 +117,11 @@ func greeting(conn net.Conn) string {
 func printer(conn net.Conn, ch <-chan msg) {
 	for m := range ch {
 		if m.user.ch == nil {
-			fmt.Fprintln(conn, "\u001b[93m" + m.text  + "\u001b[39m")
+			fmt.Fprintln(conn, "\u001b[93m"+m.text+"\u001b[39m")
 		} else if m.user.ch == ch {
-			fmt.Fprintln(conn, "[\u001b[36m" + m.user.username + "\u001b[39m]: " + m.text)
+			fmt.Fprintln(conn, "[\u001b[36m"+m.user.username+"\u001b[39m]: "+m.text)
 		} else {
-			fmt.Fprintln(conn, "[\u001b[31m" + m.user.username + "\u001b[39m]: " + m.text)
+			fmt.Fprintln(conn, "[\u001b[31m"+m.user.username+"\u001b[39m]: "+m.text)
 		}
 	}
 }
